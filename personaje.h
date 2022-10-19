@@ -5,7 +5,14 @@ using namespace std;
 
 class Personaje {
     public:
-        Personaje(string _nombre, char _genero, int _atributos[3], int _salud[4]){}
+        Personaje(string _nombre, char _genero, int _atributos[3], int _salud[4]){
+            nombre = _nombre;
+            genero = _genero;
+            for(int i = 0; i < 3; i++)
+                atributos[i] = _atributos[i];
+            for(int i = 0; i < 5 ; i++)
+                salud[i] = _salud[i];
+        }
         
         void setId(string _id) {
             id = _id;
@@ -29,15 +36,33 @@ class Personaje {
             for(int i = 0; i < 3; i++) 
                 atributos[i] = _atributos[i]; 
         }
-        int getAtributos() const{
+/*
+        int getFuerza() const{
             return atributos[0];
+        }
+        int getAgilidad() const{
+            return atributos[1];
+        }
+        int getInteligencia() const{
+            return atributos[2];
+        }
+*/
+        int* getAtributos() const{
+            int _atributos[3];
+            for(int i = 0; i < 3; i++)
+                _atributos[i] = atributos[i];
+            return _atributos; //[567, 100, 220] [0] => Fuerza, [1] => Agilidad, [2] => Inteligencia
+            // 
         }
         void setSalud(int _salud[4]){
             for(int i = 0; i < 4; i++) 
                 salud[i] = _salud[i]; 
         }
-        int getSalud() const{
-            return salud[0];
+        int* getSalud() const{
+            int _salud[4];
+            for(int i = 0; i < 4; i++)
+                _salud[i] = salud[i];
+            return _salud;
         }
         
         /*
