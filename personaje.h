@@ -1,11 +1,10 @@
 #ifndef _PERSONAJE_H_
 #define _PERSONAJE_H_
 #include <string>
-using namespace std;
 
 class Personaje {
     public:
-        Personaje(string _nombre, char _genero, int _atributos[3], int _salud[4]){
+        Personaje(std::string _nombre, char _genero, int _atributos[3], int _salud[4]){
             nombre = _nombre;
             genero = _genero;
             for(int i = 0; i < 3; i++)
@@ -14,16 +13,16 @@ class Personaje {
                 salud[i] = _salud[i];
         }
         
-        void setId(string _id) {
+        void setId(std::string _id) {
             id = _id;
         }
-        string getId() const {
+        std::string getId() const {
             return id;
         }
-        void setNombre(string _nombre) {
+        void setNombre(std::string _nombre) {
             nombre = _nombre;
         }
-        string getNombre() const{
+        std::string getNombre() const{
             return nombre;
         }
         void setGenero(char _genero) {
@@ -47,23 +46,23 @@ class Personaje {
             return atributos[2];
         }
 */
-        int* getAtributos() const{
+        /*int* getAtributos() const{
             int _atributos[3];
             for(int i = 0; i < 3; i++)
                 _atributos[i] = atributos[i];
             return _atributos; //[567, 100, 220] [0] => Fuerza, [1] => Agilidad, [2] => Inteligencia
             // 
-        }
+        }*/
         void setSalud(int _salud[4]){
             for(int i = 0; i < 4; i++) 
                 salud[i] = _salud[i]; 
         }
-        int* getSalud() const{
+        /*int* getSalud() const{
             int _salud[4];
             for(int i = 0; i < 4; i++)
                 _salud[i] = salud[i];
             return _salud;
-        }
+        }*/
         
         /*
         string getSalud() const{
@@ -77,8 +76,8 @@ class Personaje {
         } */
 
     private:
-       string id;
-       string nombre;
+       std::string id;
+       std::string nombre;
        char genero;
        int atributos[3]; //[0] => Fuerza, [1] => Agilidad, [2] => Inteligencia
        int salud[4]; // [0] => HP, [1] => Hambre, => [2] => Sed [3] => Estamina
