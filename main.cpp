@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {   
     // Creacion de ventana: altura y ancho respectivamente, titulo, estilo
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Test", sf::Style::Titlebar | sf::Style::Close); 
+    sf::RenderWindow window(sf::VideoMode(1080, 800), "Test", sf::Style::Titlebar | sf::Style::Close); 
     // Para poder ubicar los eventos que ocurren
     sf::Event event;
 
