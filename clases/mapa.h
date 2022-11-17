@@ -4,25 +4,25 @@
 
 class Mapa {
     public:
-        Mapa(int _tam[2]){
-            for(int i = 0; i < 2; i++)
-                tam[i] = _tam[i];     
+        Mapa(int width, int height){
+            tam[0] = width;
+            tam[1] = height;
+        }        
+        void setwidth(int width){
+            tam[0] = width;
         }
-        
-        void setTam(int _tam[2]){
-            for(int i = 0; i < 2; i++) 
-                tam[i] = _tam[i]; 
+        int getwidth() const {
+            return tam[0];
         }
-
-        /*int* getTam() const{
-            int _tam[2];
-            for(int i = 0; i < 2; i++)
-                _tam[i] = tam[i];
-            return _tam;
-        }*/
+        void setheight(int height){
+            tam[1] = height;
+        }
+        int getheight() const {
+            return tam[1];
+        }
         
     private:
        int tam[2]; // (tamX, tamY) tam[0] => tamX, tam[1] => tamY
-        
+
 };
 #endif

@@ -10,6 +10,7 @@ class Atributos {
             agilidad = _agilidad;
             inteligencia = _inteligencia;
         }
+        Atributos(atributos &o)
 
         void setFuerza(int _fuerza) 
         {
@@ -43,6 +44,5 @@ class Atributos {
 
     private:
         int fuerza{0}, agilidad{0}, inteligencia{0};
-        int *x = new int[4];
 };
 #endif
