@@ -1,20 +1,17 @@
 #ifndef _ENTIDAD_H_
 #define _ENTIDAD_H_
 #include <string>
-#include "atributos.h"
 
 class Entidad {
     public:
-        Entidad();
-        Entidad(Entidad &o);
+        Entidad() {}
 
-        void setId(std::string);
-        std::string getVida() const;
+        void setId(std::string go){}
 
         void setVida(bool);
-        bool getVida() const;       
+        int getVida() const;
 
-    private:
+    protected:
         std::string id;
         bool vida;
 

@@ -1,10 +1,12 @@
 #ifndef _PERSONAJE_H_
 #define _PERSONAJE_H_
 #include <string>
+#include "Entidad.h"
 
-class Personaje : public Entidad {
+
+class Personaje : public Entidad{
     public:
-        Personaje(std::string id;std::strin nombre, int edad);
+        Personaje(std::string id, std::string nombre, int edad);
         Personaje();
         Personaje(Personaje &o);
 
