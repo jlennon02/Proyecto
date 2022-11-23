@@ -1,13 +1,12 @@
 ﻿  main.cpp
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main\main.cpp(9,55): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(9,55): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main\main.cpp(9,37): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(9,37): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main\main.cpp(68,32): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
-  BattleRoyale.vcxproj -> C:\MyStuff\UCSP\Repositorios\BattleRoyale\vsplussfml\BattleRoyale\x64\Debug\BattleRoyale.exe
+  BattleRoyale.vcxproj -> C:\MyStuff\UCSP\Repositorios\Proyecto_final\x64\Debug\BattleRoyale.exe

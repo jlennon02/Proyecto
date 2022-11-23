@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\MyStuff\UCSP\Repositorios\BattleRoyale\vsplussfml\BattleRoyale\SFML-2.5.1\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\MyStuff\UCSP\Repositorios\BattleRoyale\vsplussfml\BattleRoyale\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\MyStuff\UCSP\Repositorios\Proyecto_final\SFML-2.5.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\MyStuff\UCSP\Repositorios\Proyecto_final\SFML-2.5.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,11 +132,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Proyecto_final\main\main.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="OptionsMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="OptionsMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
