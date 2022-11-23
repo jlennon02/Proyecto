@@ -7,27 +7,9 @@
 
 class Animal : public Entidad {
     public:
-        Animal(std::string nombre):edad(edad), nombre(nombre){};
-        Animal(sf::Texture &texture):texture(texture) {};
-        
-        void setnombrel(std::string nombre) {
-            nombre = nombre;
-        }
-        std::string getnombre() const {
-            return nombre;
-        }
-
-
-        void setedad(int edad){
-            edad = edad;
-        }
-        int getedad() const{
-            return edad;
-        }
-
-        void settexture(sf::Texture o) {
-            texture = o;
-        }
+        Animal(){};
+        // la clase animal hereda todo de la clase endidad por lo que aqui solo hace falta poner metodos y herencias
+    
         void mostrar_sprite() {
             // codigo de impresion de sprite 
         }
@@ -35,7 +17,6 @@ class Animal : public Entidad {
 
     private:
         sf::Texture texture;
-        std::string nombre;
-        int edad;
+
 };
 #endif
