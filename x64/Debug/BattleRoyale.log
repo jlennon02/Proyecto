@@ -1,24 +1,20 @@
-<<<<<<< HEAD
-﻿  BattleRoyale.vcxproj -> C:\Users\USER\Documents\GitHub\Proyecto_final\x64\Debug\BattleRoyale.exe
-=======
 ﻿  main.cpp
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(12,46): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(12,33): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(13,55): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(12,46): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(12,33): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(13,55): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(13,37): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(13,37): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
           with
           [
               T=unsigned int
           ]
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(59,62): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(59,49): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(60,65): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(60,52): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(61,63): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\main.cpp(61,50): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-  BattleRoyale.vcxproj -> C:\MyStuff\UCSP\Repositorios\Proyecto_final\x64\Debug\BattleRoyale.exe
->>>>>>> 7f6e00083a3106dc8fd736d3e58c949cf209f81c
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(59,62): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(59,49): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(60,65): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(60,52): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(61,63): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(61,50): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+  BattleRoyale.vcxproj -> C:\Users\USER\Documents\GitHub\Proyecto_final\x64\Debug\BattleRoyale.exe
