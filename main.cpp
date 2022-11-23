@@ -2,10 +2,14 @@
 #include "MainMenu.h"
 using namespace sf;
 
-int main()
-{
+int main() {
+
+    // Ancho y largo de la pantalla predeterminado
+    float widthScreen = 960;
+    float heightScreen = 720;
+
     // Make a Main window
-    RenderWindow MENU(sf::VideoMode(960, 720), "Menu Principal", sf::Style::Titlebar | sf::Style::Close);
+    RenderWindow MENU(VideoMode(widthScreen, heightScreen), "Menu Principal", sf::Style::Titlebar | sf::Style::Close);
     MainMenu mainMenu(MENU.getSize().x, MENU.getSize().y);
 
     // BattleRoyale Logo:
@@ -17,14 +21,14 @@ int main()
 
     // MainMenu Background
     RectangleShape MMbackground;
-    MMbackground.setSize(Vector2f(960, 720));
+    MMbackground.setSize(Vector2f(widthScreen, heightScreen));
     Texture MainTexture;
     MainTexture.loadFromFile("Texture/background.jpg");
     MMbackground.setTexture(&MainTexture);
 
     // About Image
     RectangleShape ABbackground;
-    ABbackground.setSize(Vector2f(960, 720));
+    ABbackground.setSize(Vector2f(widthScreen, heightScreen));
     Texture Aboutexture;
     Aboutexture.loadFromFile("Texture/about.jpg");
     ABbackground.setTexture(&Aboutexture);
@@ -52,9 +56,9 @@ int main()
                     break;
                 }
                 if(event.key.code == Keyboard::Return) {
-                    RenderWindow Play(VideoMode(960, 720), "BATTLE ROYALE");
-                    RenderWindow OPTIONS(VideoMode(960, 720), "OPTIONS");
-                    RenderWindow ABOUT(VideoMode(960, 720), "ABOUT");
+                    RenderWindow Play(VideoMode(widthScreen, heightScreen), "BATTLE ROYALE", sf::Style::Titlebar | sf::Style::Close);
+                    RenderWindow OPTIONS(VideoMode(widthScreen, heightScreen), "OPTIONS", sf::Style::Titlebar | sf::Style::Close);
+                    RenderWindow ABOUT(VideoMode(widthScreen, heightScreen), "ABOUT", sf::Style::Titlebar | sf::Style::Close);
 
                     int x = mainMenu.MainMenuPressed();
                 
@@ -73,9 +77,11 @@ int main()
                                     if (aevent.key.code == Keyboard::Escape) 
                                     {
                                         Play.close();
+                                        // mainMenu.create(MENU);
                                     }
-                                }
+                                }                              
                             }
+                            // MENU.close();
                             OPTIONS.close();
                             ABOUT.close();
                             Play.clear();
