@@ -5,7 +5,7 @@
 
 class Guerrero: public Personaje{
   public:
-    Archer(int _daño, int _hitbox, int _vel_ataq):daño(_daño), hitbox(_hitbox), vel_ataq(_vel_ataq){}
+    Guerrero(int _daño, int _hitbox, int _vel_ataq):daño(_daño), hitbox(_hitbox), vel_ataq(_vel_ataq){}
     void getdaño(int _daño){
       daño = _daño;
     }
