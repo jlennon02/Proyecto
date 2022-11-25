@@ -2,7 +2,7 @@
 
 MainMenu::MainMenu(float width, float height)
 {
-    if (!font.loadFromFile("Fonts/arial.ttf")) {
+    if (!font.loadFromFile("Fonts/Valorant Font.ttf")) {
         cout << "No fonts is here";
     }
 
@@ -44,18 +44,7 @@ void MainMenu::draw(RenderWindow& window) {
         window.draw(mainMenu[i]);
     }
 }
-// MoveUp
-void MainMenu::MoveUp() {
-    if (MainMenuSelected - 1 >= 0) 
-    {
-        mainMenu[MainMenuSelected].setFillColor(Color::White);
-        MainMenuSelected--;
-        if (MainMenuSelected == -1) {
-            MainMenuSelected = Max_main_menu;
-        }
-        mainMenu[MainMenuSelected].setFillColor(Color::Blue);
-    }
-}
+
 // MoveDown
 void MainMenu::MoveDown() {
     if (MainMenuSelected + 1 <= Max_main_menu)
@@ -64,6 +53,19 @@ void MainMenu::MoveDown() {
         MainMenuSelected++;
         if (MainMenuSelected == 4) {
             MainMenuSelected = 0;
+        }
+        mainMenu[MainMenuSelected].setFillColor(Color::Blue);
+    }
+}
+
+// MoveUp
+void MainMenu::MoveUp() {
+    if (MainMenuSelected + 1 >= 1) 
+    {
+        mainMenu[MainMenuSelected].setFillColor(Color::White);
+        MainMenuSelected--;
+        if (MainMenuSelected == -1) {
+            MainMenuSelected = 3;
         }
         mainMenu[MainMenuSelected].setFillColor(Color::Blue);
     }

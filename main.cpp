@@ -4,34 +4,55 @@ using namespace sf;
 
 int main() {
 
+    // MainMenu Background 1 Textura
+    Texture MainTexture;
+    MainTexture.loadFromFile("Texture/IslandB.jpg");
+    
     // Ancho y largo de la pantalla predeterminado
-    float widthScreen = 960;
-    float heightScreen = 720;
+    float widthScreen = MainTexture.getSize().x;
+    float heightScreen = MainTexture.getSize().y;
 
+    // MainMenu Background 1
+
+    RectangleShape MMbackground;
+    MMbackground.setSize(Vector2f(widthScreen, heightScreen));
+    MMbackground.setTexture(&MainTexture);
+    
     // Make a Main window
-    RenderWindow MENU(VideoMode(widthScreen, heightScreen), "Menu Principal", sf::Style::Titlebar | sf::Style::Close);
+    RenderWindow MENU(VideoMode(widthScreen, heightScreen), "Menu Principal", Style::None);
     MainMenu mainMenu(MENU.getSize().x, MENU.getSize().y);
 
     // BattleRoyale Logo:
-    RectangleShape BRlogo;
-    BRlogo.setSize(Vector2f(300, 150));
     Texture TitleTexture;
-    TitleTexture.loadFromFile("Texture/title.jpg");
+    TitleTexture.loadFromFile("Texture/BR Survival.png");
+    
+    RectangleShape BRlogo;
+    BRlogo.setSize(Vector2f(TitleTexture.getSize().x, TitleTexture.getSize().y));
     BRlogo.setTexture(&TitleTexture);
+    BRlogo.setPosition(widthScreen - TitleTexture.getSize().x - 50, heightScreen / 2);
+    
+    
+    //Photo to the game
+    Texture Gametexture1;
+    Gametexture1.loadFromFile("Texture/Game2.jpg");
+    RectangleShape Pbackground;
+    Pbackground.setSize(Vector2f(Gametexture1.getSize().x, Gametexture1.getSize().y));
+    Pbackground.setTexture(&Gametexture1);
 
-    // MainMenu Background
-    RectangleShape MMbackground;
-    MMbackground.setSize(Vector2f(widthScreen, heightScreen));
-    Texture MainTexture;
-    MainTexture.loadFromFile("Texture/background.jpg");
-    MMbackground.setTexture(&MainTexture);
-
+    //photo to the option
+    Texture OptionTexture;
+    OptionTexture.loadFromFile("Texture/Options.jpg");
+    RectangleShape Obackground;
+    Obackground.setSize(Vector2f(OptionTexture.getSize().x/2, OptionTexture.getSize().y/2));
+    Obackground.setTexture(&OptionTexture);
+    
     // About Image
-    RectangleShape ABbackground;
-    ABbackground.setSize(Vector2f(widthScreen, heightScreen));
     Texture Aboutexture;
-    Aboutexture.loadFromFile("Texture/about.jpg");
+    Aboutexture.loadFromFile("Texture/About.jpg");
+    RectangleShape ABbackground;
+    ABbackground.setSize(Vector2f(Aboutexture.getSize().x,Aboutexture.getSize().y));
     ABbackground.setTexture(&Aboutexture);
+
 
     while (MENU.isOpen()) 
     {
@@ -55,17 +76,17 @@ int main() {
                     mainMenu.MoveDown();
                     break;
                 }
+                
                 if(event.key.code == Keyboard::Return) {
-                    RenderWindow Play(VideoMode(widthScreen, heightScreen), "BATTLE ROYALE", sf::Style::Titlebar | sf::Style::Close);
-                    RenderWindow OPTIONS(VideoMode(widthScreen, heightScreen), "OPTIONS", sf::Style::Titlebar | sf::Style::Close);
-                    RenderWindow ABOUT(VideoMode(widthScreen, heightScreen), "ABOUT", sf::Style::Titlebar | sf::Style::Close);
 
                     int x = mainMenu.MainMenuPressed();
                 
                     if (x == 0)
                     { 
+                        RenderWindow Play(VideoMode(Gametexture1.getSize().x, Gametexture1.getSize().y), "BATTLE ROYALE", Style::None);
                         while(Play.isOpen()) 
                         {
+                            MENU.setVisible(false);
                             Event aevent;
                             while (Play.pollEvent(aevent)) { 
                                 if (aevent.type == Event::Closed) 
@@ -81,18 +102,18 @@ int main() {
                                     }
                                 }                              
                             }
-                            // MENU.close();
-                            OPTIONS.close();
-                            ABOUT.close();
                             Play.clear();
+                            Play.draw(Pbackground);
                             Play.display();
                         }
+                        MENU.setVisible(true);
                     } 
                     if (x == 1)
                     {
-
+                        RenderWindow OPTIONS(VideoMode(OptionTexture.getSize().x/2, OptionTexture.getSize().y/2), "OPTIONS", Style::None);
                         while (OPTIONS.isOpen())
                         {
+                            MENU.setVisible(false);
                             Event aevent;
                             while (OPTIONS.pollEvent(aevent)) {
                                 if (aevent.type == Event::Closed)
@@ -107,17 +128,18 @@ int main() {
                                     }
                                 }
                             }
-                            Play.close();
                             OPTIONS.clear();
-                            ABOUT.close();
+                            OPTIONS.draw(Obackground);
                             OPTIONS.display();  
                         }
                     }
 
                     if (x == 2)
                     {
+                        RenderWindow ABOUT(VideoMode(Aboutexture.getSize().x, Aboutexture.getSize().y), "ABOUT", Style::None);
                         while (ABOUT.isOpen()) 
                         {
+                            MENU.setVisible(false);
                             Event aevent;
                             while (ABOUT.pollEvent(aevent)) {
                                 if (aevent.type == Event::Closed) 
@@ -130,8 +152,6 @@ int main() {
                                     }
                                 }
                             }
-                            Play.close();
-                            OPTIONS.clear();
                             ABOUT.clear();
                             ABOUT.draw(ABbackground);
                             ABOUT.display();
@@ -142,12 +162,15 @@ int main() {
                         MENU.close();
                     break;
                 }
+                
             }
         }
+        MENU.setVisible(true);
         MENU.clear();
         MENU.draw(MMbackground);
         MENU.draw(BRlogo);
         mainMenu.draw(MENU);
         MENU.display(); 
     }   
+    return 0;
 }
