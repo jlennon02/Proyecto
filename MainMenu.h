@@ -7,7 +7,7 @@ using namespace sf;
 #define Max_main_menu 4
 class MainMenu {
 public:
-    MainMenu(float width, float height);
+    MainMenu(int num);
 
     void draw(RenderWindow& window);
     void MoveUp();

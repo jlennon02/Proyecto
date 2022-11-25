@@ -1,6 +1,6 @@
 #include "MainMenu.h"
 
-MainMenu::MainMenu(float width, float height)
+MainMenu::MainMenu(int num)
 {
     if (!font.loadFromFile("Fonts/Valorant Font.ttf")) {
         cout << "No fonts is here";

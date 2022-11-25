@@ -1,96 +1,10 @@
 ﻿  main.cpp
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(12,23): warning C4244: 'inicializando': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(13,24): warning C4244: 'inicializando': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(22,46): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(22,33): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(23,55): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(23,37): warning C4244: 'argumento': conversión de 'T' a 'float'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(30,77): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(30,51): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(39,82): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(39,56): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(46,88): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(46,59): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(53,80): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(53,56): warning C4244: 'argumento': conversión de 'T' a 'T'; posible pérdida de datos
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(16,41): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(16,31): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(48,54): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(48,40): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(74,75): warning C4244: 'argumento': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(74,53): warning C4244: 'argumento': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(100,57): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(100,42): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
   BattleRoyale.vcxproj -> C:\Users\USER\Documents\GitHub\Proyecto_final\x64\Debug\BattleRoyale.exe
