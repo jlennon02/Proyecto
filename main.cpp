@@ -5,28 +5,29 @@ using namespace sf;
 
 int main() {
 	
+	Builder bPlay("Texture/Game2.jpg", "Battle Royale", Style::None);
+	bPlay.CreateWindowBackground();
 
-	Builder bPlay("Texture/Game2.jpg");
-	
-	Builder bOptions("Texture/Options.jpg");
+	Builder bOptions("Texture/Options.jpg", "Options", Style::None, 2);
+	bOptions.CreateWindowBackground();
 
-	Builder bAbout("Texture/About.jpg");
-	
-	Builder b("Texture/IslandB.jpg");
-	RenderWindow MENU(VideoMode(b.widthT, b.heightT), "Menu Principal", Style::None);
-	MainMenu mainMenu(100);
+	Builder bAbout("Texture/About.jpg", "About", Style::None);
+	bAbout.CreateWindowBackground();
+
+	Builder bMain("Texture/IslandB.jpg", "Menu Battle Royale");
+	bMain.CreateWindowBackground();
+
+	RenderWindow MENU(VideoMode(bMain.getWidthT(), bMain.getHeightT()), bMain.getNameWindow(), Style::None);
+	MainMenu mainMenu(1);
 
 	while (MENU.isOpen()) {
 		Event event;
 		while (MENU.pollEvent(event)) {
 			if (event.type == Event::Closed)
-			{
 				MENU.close();
-			}
+
 			if (event.type == Event::Closed)
-			{
 				MENU.close();
-			}
 
 			if (event.type == Event::KeyReleased)
 			{
@@ -43,81 +44,14 @@ int main() {
 				if (event.key.code == Keyboard::Return) {
 
 					int x = mainMenu.MainMenuPressed();
-					if (x == 0)
-					{
-						RenderWindow Play(VideoMode(bPlay.widthT, bPlay.heightT), "BATTLE ROYALE", Style::None);
-						while (Play.isOpen())
-						{
-							MENU.setVisible(false);
-							Event aevent;
-							while (Play.pollEvent(aevent)) {
-								if (aevent.type == Event::Closed)
-								{
-									Play.close();
-								}
-								if (aevent.type == Event::KeyPressed)
-								{
-									if (aevent.key.code == Keyboard::Escape)
-									{
-										Play.close();
-									}
-								}
-							}
-							Play.clear();
-							Play.draw(bPlay.rectangleShape);
-							Play.display();
-						}
-						MENU.setVisible(true);
-					}
+					if (x == 0) 
+						bPlay.InitWindow();
+
 					if (x == 1)
-					{
-						RenderWindow OPTIONS(VideoMode(bOptions.widthT/1.5, bOptions.heightT/1.5), "Options", Style::None);
-						while (OPTIONS.isOpen())
-						{
-							MENU.setVisible(false);
-							Event aevent;
-							while (OPTIONS.pollEvent(aevent)) {
-								if (aevent.type == Event::Closed)
-								{
-									OPTIONS.close();
-								}
-								if (aevent.type == Event::KeyPressed)
-								{
-									if (aevent.key.code == Keyboard::Escape)
-									{
-										OPTIONS.close();
-									}
-								}
-							}
-							OPTIONS.clear();
-							OPTIONS.draw(bOptions.rectangleShape);
-							OPTIONS.display();
-						}
-					}
+						bOptions.InitWindow();
 
 					if (x == 2)
-					{
-						RenderWindow ABOUT(VideoMode(bAbout.widthT, bAbout.heightT), "About", Style::None);
-						while (ABOUT.isOpen())
-						{
-							MENU.setVisible(false);
-							Event aevent;
-							while (ABOUT.pollEvent(aevent)) {
-								if (aevent.type == Event::Closed)
-								{
-									ABOUT.close();
-								}
-								if (aevent.type == Event::KeyPressed) {
-									if (aevent.key.code == Keyboard::Escape) {
-										ABOUT.close();
-									}
-								}
-							}
-							ABOUT.clear();
-							ABOUT.draw(bAbout.rectangleShape);
-							ABOUT.display();
-						}
-					}
+						bAbout.InitWindow();
 
 					if (x == 3)
 						MENU.close();
@@ -127,15 +61,16 @@ int main() {
 		}
 		MENU.setVisible(true);
 		MENU.clear();
-		MENU.draw(b.rectangleShape);
+		MENU.draw(bMain.getRectangleShape());
 		mainMenu.draw(MENU);
 		MENU.display();
 	}
 	return 0;
-
 }
 
 /*
+
+
 	// MainMenu Background 1 Textura
 	Texture MainTexture;
 	MainTexture.loadFromFile("Texture/IslandB.jpg");
