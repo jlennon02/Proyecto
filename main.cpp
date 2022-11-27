@@ -1,3 +1,4 @@
+/*
 #include <SFML/Graphics.hpp>
 #include "Builder.h"
 #include "MainMenu.h"
@@ -68,9 +69,10 @@ int main() {
 	return 0;
 }
 
+*/
+
+
 /*
-
-
 	// MainMenu Background 1 Textura
 	Texture MainTexture;
 	MainTexture.loadFromFile("Texture/IslandB.jpg");

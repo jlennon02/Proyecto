@@ -7,11 +7,11 @@
 
 class Personaje : public Entidad{
     public:
-        Personaje(std::string _id, int _atr_inteligencia, Salud &o[3]);///   1
-        // elijan la formas correcta para ustedes 1 o 2
-        //Personaje(std::string _id, int _inteligencia, int _hambre, int _sed, int _stamina);///    2
+        // Personaje(std::string _id, int _atr_inteligencia, Salud &o[3]);///   1
+        // la 2 pq la entiendo mas xd
+        Personaje(std::string _id, int _inteligencia, int _hambre, int _sed, int _stamina);///    2
     
-        ///Personaje(Personaje &o);
+        Personaje(Personaje &o);
     
         void getid(std::string _id){
             id=_id;
