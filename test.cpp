@@ -1,3 +1,4 @@
+/*
 #include <SFML/Graphics.hpp>
 #include "GameTile.h"
 #include "GameWorld.h"
@@ -31,3 +32,4 @@ int main() {
 
     }
 }
+*/

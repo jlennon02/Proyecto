@@ -1,8 +1,6 @@
-﻿  GameTile.cpp
-  GameWorld.cpp
-  main.cpp
+﻿  main.cpp
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(20,65): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+C:\Users\USER\Documents\GitHub\Proyecto_final\main.cpp(20,45): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
   test.cpp
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\test.cpp(11,51): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
-C:\MyStuff\UCSP\Repositorios\Proyecto_final\test.cpp(11,38): warning C4244: 'argumento': conversión de 'float' a 'unsigned int'; posible pérdida de datos
   Generando código...
-  BattleRoyale.vcxproj -> C:\MyStuff\UCSP\Repositorios\Proyecto_final\x64\Debug\BattleRoyale.exe
+  BattleRoyale.vcxproj -> C:\Users\USER\Documents\GitHub\Proyecto_final\x64\Debug\BattleRoyale.exe

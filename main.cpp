@@ -1,4 +1,3 @@
-/*
 #include <SFML/Graphics.hpp>
 #include "Builder.h"
 #include "MainMenu.h"
@@ -68,8 +67,6 @@ int main() {
 	}
 	return 0;
 }
-
-*/
 
 
 /*

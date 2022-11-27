@@ -2,3 +2,11 @@
 *.o
 .vscode
 .vs
+*.obj
+*.pdb
+*.idb
+*.log
+*.ilk
+BattleRoyale.vcxproj.FileListAbsolute.txt
+BattleRoyale.exe.recipe
+BattleRoyale.tlog
