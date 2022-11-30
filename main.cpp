@@ -1,26 +1,24 @@
 #include <SFML/Graphics.hpp>
 #include "Builder.h"
 #include "MainMenu.h"
-#include "GameTile.h"
-#include "GameWorld.h"
-
+#include "Buttom.h"
 using namespace sf;
 
 int main() {
+	
+	Builder bPlay("Texture/Game2.jpg", "Battle Royale", Style::None);
+	bPlay.CreateWindowBackground();
 
-	Builder windowMain("Texture/IslandB.jpg", "Menu Battle Royale");
-	windowMain.CreateWindowBackground();
+	Builder bOptions("Texture/Options.jpg", "Options", Style::None, 2);
+	bOptions.CreateWindowBackground();
 
-	Builder windowPlay("Battle Royale"); 
-	GameWorld gameWorld = GameWorld();								
+	Builder bAbout("Texture/About.jpg", "About", Style::None);
+	bAbout.CreateWindowBackground();
 
-	Builder windowOptions("Texture/Options.jpg", "Options", Style::None, 2);
-	windowOptions.CreateWindowBackground();
+	Builder bMain("Texture/IslandB.jpg", "Menu Battle Royale");
+	bMain.CreateWindowBackground();
 
-	Builder windowAbout("Texture/About.jpg", "About", Style::None);	
-	windowAbout.CreateWindowBackground();
-
-	RenderWindow MENU(VideoMode(windowMain.getWidthT(), windowMain.getHeightT()), windowMain.getNameWindow(), Style::None);
+	RenderWindow MENU(VideoMode(bMain.getWidthT(), bMain.getHeightT()), "bMain.getNameWindow()", Style::Default);
 	MainMenu mainMenu(1);
 
 	while (MENU.isOpen()) {
@@ -47,25 +45,15 @@ int main() {
 				if (event.key.code == Keyboard::Return) {
 
 					int x = mainMenu.MainMenuPressed();
-					if (x == 0) 
-						windowPlay.InitGameWindow(gameWorld);
-						MENU.setVisible(false); // No funciona esto x'd
-						
-						// Si event::movemouse esta dentro de vector2f(x, y) de la zona a
-						// gameWorld
-						gameWorld.setPos(400, 400);
-						// Falta funcion para dibujar letras dentro de gameworld
-						// Algo asi como el draw() de MainMenu
-						// definiendole la pos de dibujado y metiendole el gameWorld.getPos()
-						// deberia dar las coords q se quiere	
-
-					if (x == 1)
-						windowOptions.InitWindow();
+					if (x == 0){
 						MENU.setVisible(false);
+						bPlay.InitWindow();
+					}
+					if (x == 1)
+						bOptions.InitWindow();
 
 					if (x == 2)
-						windowAbout.InitWindow();
-						MENU.setVisible(false);
+						bAbout.InitWindow();
 
 					if (x == 3)
 						MENU.close();
@@ -75,9 +63,10 @@ int main() {
 		}
 		MENU.setVisible(true);
 		MENU.clear();
-		MENU.draw(windowMain.getRectangleShape());
+		MENU.draw(bMain.getRectangleShape());
 		mainMenu.draw(MENU);
 		MENU.display();
 	}
 	return 0;
 }
+

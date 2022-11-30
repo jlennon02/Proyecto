@@ -1,13 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp> 
-#include "GameWorld.h"
+#include "Buttom.h"
 using namespace std;
 using namespace sf;
 
-class Builder {
+class Builder
+{
 	public:
 		
-		Builder(std::string title, Uint32 style = Style::Default);
 		Builder(std::string f, std::string title, Uint32 style = Style::Default, float resize = 1, float w = 0, float h = 0);
 
 		void setFileDirection(std::string f);
@@ -24,10 +24,10 @@ class Builder {
 
 		RectangleShape getRectangleShape() const;
 
+		void CreateWindow();
 		void CreateWindowBackground();
 		//void InitWindow(RenderWindow& BeforeWindow);
-		void InitWindow();
-		void InitGameWindow(GameWorld world);
+		void InitWindow(int des = 0);
 
 		RenderWindow window;
 	private:

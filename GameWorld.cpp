@@ -5,18 +5,6 @@ GameWorld::GameWorld() {
 	setUpInitialState();
 }
 
-void GameWorld::setPos(float x, float y) {
-	currentPos = sf::Vector2f(x, y);
-}
-
-sf::Vector2f GameWorld::getPos() const {
-	return currentPos;
-}
-// Creo q el limite del mapa ya esta definido pq el mouse no va mas alla de la ventana
-// Pero si necesitas los limites serian pues, float x > 0 && x < 800 
-// en coord y -> float y > 0 && y < 800
-//algo asi seria x'd 
-
 void GameWorld::setUpInitialState() {
 	exitPos = sf::Vector2i(1, 0);
 	playerPos = sf::Vector2i(gridLength-1, gridLength-1);
@@ -34,90 +22,90 @@ void GameWorld::setUpTiles() {
 	tiles.clear();
 	std::vector<GameTile *> firstRow;
 	firstRow.push_back(new GameTile("Texture/grass.png", 0, 0, true, true));
+	firstRow.push_back(new GameTile("Texture/grass.png", 50, 0, true, true));
 	firstRow.push_back(new GameTile("Texture/grass.png", 100, 0, true, true));
+	firstRow.push_back(new GameTile("Texture/grass.png", 150, 0, true, true));
 	firstRow.push_back(new GameTile("Texture/grass.png", 200, 0, true, true));
+	firstRow.push_back(new GameTile("Texture/grass.png", 250, 0, true, true));
 	firstRow.push_back(new GameTile("Texture/grass.png", 300, 0, true, true));
-	firstRow.push_back(new GameTile("Texture/grass.png", 400, 0, true, true));
-	firstRow.push_back(new GameTile("Texture/grass.png", 500, 0, true, true));
-	firstRow.push_back(new GameTile("Texture/grass.png", 600, 0, true, true));
-	firstRow.push_back(new GameTile("Texture/grass.png", 700, 0, true, true));
+	firstRow.push_back(new GameTile("Texture/grass.png", 350, 0, true, true));
 	tiles.push_back(firstRow);
 
 	std::vector<GameTile *> secondRow;
-	secondRow.push_back(new GameTile("Texture/grass.png", 0, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 100, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 200, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 300, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 400, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 500, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 600, 100, true, true));
-	secondRow.push_back(new GameTile("Texture/grass.png", 700, 100, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 0, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 50, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 100, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 150, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 200, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 250, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 300, 50, true, true));
+	secondRow.push_back(new GameTile("Texture/grass.png", 350, 50, true, true));
 	tiles.push_back(secondRow);
 
 	std::vector<GameTile *> thirdRow;
-	thirdRow.push_back(new GameTile("Texture/grass.png", 0, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 100, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 200, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 300, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 400, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 500, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 600, 200, true, false));
-	thirdRow.push_back(new GameTile("Texture/grass.png", 700, 200, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 0, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 50, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 100, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 150, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 200, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 250, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 300, 100, true, false));
+	thirdRow.push_back(new GameTile("Texture/grass.png", 350, 100, true, false));
 	tiles.push_back(thirdRow);
 
 	std::vector<GameTile *> fourthRow;
-	fourthRow.push_back(new GameTile("Texture/grass.png", 0, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 100, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 200, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 300, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 400, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 500, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 600, 300, true, false));
-	fourthRow.push_back(new GameTile("Texture/grass.png", 700, 300, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 0, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 50, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 100, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 150, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 200, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 250, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 300, 150, true, false));
+	fourthRow.push_back(new GameTile("Texture/grass.png", 350, 150, true, false));
 	tiles.push_back(fourthRow);
 
 	std::vector<GameTile *> fifthRow;
-	fifthRow.push_back(new GameTile("Texture/grass.png", 0, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 100, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 200, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 300, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 400, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 500, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 600, 400, true, false));
-	fifthRow.push_back(new GameTile("Texture/grass.png", 700, 400, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 0, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 50, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 100, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 150, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 200, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 250, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 300, 200, true, false));
+	fifthRow.push_back(new GameTile("Texture/grass.png", 350, 200, true, false));
 	tiles.push_back(fifthRow);
 
 	std::vector<GameTile *> sixthRow;
-	sixthRow.push_back(new GameTile("Texture/grass.png", 0, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 100, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 200, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 300, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 400, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 500, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 600, 500, true, false));
-	sixthRow.push_back(new GameTile("Texture/grass.png", 700, 500, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 0, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 50, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 100, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 150, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 200, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 250, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 300, 250, true, false));
+	sixthRow.push_back(new GameTile("Texture/grass.png", 350, 250, true, false));
 	tiles.push_back(sixthRow);
 
 	std::vector<GameTile *> seventhRow;
-	seventhRow.push_back(new GameTile("Texture/grass.png", 0, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 100, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 200, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 300, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 400, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 500, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 600, 600, true, false));
-	seventhRow.push_back(new GameTile("Texture/grass.png", 700, 600, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 0, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 50, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 100, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 150, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 200, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 250, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 300, 300, true, false));
+	seventhRow.push_back(new GameTile("Texture/grass.png", 350, 300, true, false));
 	tiles.push_back(seventhRow);
 
 	std::vector<GameTile *> eigthRow;
-	eigthRow.push_back(new GameTile("Texture/grass.png", 0, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 100, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 200, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 300, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 400, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 500, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 600, 700, true, false));
-	eigthRow.push_back(new GameTile("Texture/grass.png", 700, 700, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 0, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 50, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 100, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 150, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 200, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 250, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 300, 350, true, false));
+	eigthRow.push_back(new GameTile("Texture/grass.png", 350, 350, true, false));
 	tiles.push_back(eigthRow);
 
 }

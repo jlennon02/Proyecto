@@ -1,17 +1,14 @@
 #include "Builder.h"
 
-Builder::Builder(std::string title, Uint32 style) {
-	nameWindow = title;
-	this->style = style; //uint32
-}
-
-Builder::Builder(std::string f, std::string title, Uint32 style, float resize, float w, float h) {
+Builder::Builder(std::string f, std::string tittle, Uint32 style, float resize, float w, float h)
+{
 	fileDirection = f;
-	nameWindow = title;
+	nameWindow = tittle;
 	this->style = style; //uint32
 	scale = resize;
 	widthT = w;
 	heightT = h;
+
 }
 
 void Builder::setFileDirection(std::string f)
@@ -69,12 +66,33 @@ void Builder::CreateWindowBackground()
 	rectangleShape.setTexture(&texture);
 }
 
-void Builder::InitWindow() {
+void Builder::CreateWindow()
+{
+	rectangleShape.setSize(Vector2f(widthT, heightT));
+	rectangleShape.setTexture(&texture);
+}
+
+void Builder::InitWindow(int des)
+{
 	window.create(VideoMode(widthT, heightT), nameWindow, style);
+	
+	Buttom b(Color::Red, 100,50, 400, 200);
+	b.CreateTextButtom();
+	
+	Frames frame(Color::Blue, 200, 80);
+	Builder newWindow("Texture/Game3.jpg", "Exito");
+	newWindow.CreateWindowBackground();
+
+	Builder AWin("Texture/Game0.jpg", "Exito");
+	AWin.CreateWindowBackground();
+	int desicion = des;
+
 	while (window.isOpen())
 	{
+		window.setMouseCursorVisible(true);
 		Event event;
-		while (window.pollEvent(event)) {
+		while (window.pollEvent(event)) 
+		{
 			if (event.type == Event::Closed)
 			{
 				window.close();
@@ -86,43 +104,60 @@ void Builder::InitWindow() {
 					window.close();
 				}
 			}
+			if (Mouse::getPosition().x > widthT || Mouse::getPosition().y > heightT)
+				window.setMouseCursorVisible(false);
+
+			
+			if (event.type == Event::MouseButtonPressed)
+			{
+				if (event.type == Event::MouseButtonPressed)
+				{
+					if (Mouse::getPosition().x > 0 && Mouse::getPosition().x < 500 && Mouse::getPosition().y > 0 && Mouse::getPosition().y < 500)
+					{
+						newWindow.InitWindow(2);
+					}
+
+					if (Mouse::getPosition().x > widthT - 500 && Mouse::getPosition().x < widthT && Mouse::getPosition().y > heightT - 500 && Mouse::getPosition().y < heightT)
+					{
+						AWin.InitWindow(1);
+					}
+				}
+
+			}
+			
 		}
+		
 		window.clear();
 		window.draw(rectangleShape);
+		window.draw(b);
+		window.draw(frame);
 		window.display();
 	}
 }
 
-void Builder::InitGameWindow(GameWorld world) {
-	window.create(VideoMode(800, 800), nameWindow, style);
-	while (window.isOpen())
-	{
-		Event event;
-		while (window.pollEvent(event)) {
-			if (event.type == Event::Closed)
+/*
+if (Mouse::getPosition().x > widthT || Mouse::getPosition().y > heightT)
+				window.setMouseCursorVisible(false);
+
+
+			if (event.type == Event::MouseButtonPressed)
 			{
-				window.close();
-			}
-			if (event.type == Event::KeyPressed)
-			{
-				if (event.key.code == Keyboard::Escape)
+				if (Mouse::getPosition().x > 0 && Mouse::getPosition().x < 500 && Mouse::getPosition().y > 0 && Mouse::getPosition().y < 500)
 				{
-					window.close();
+					newWindow.InitWindow(2);
+				}
+
+				if (Mouse::getPosition().x > widthT - 500 && Mouse::getPosition().x < widthT && Mouse::getPosition().y > heightT - 500 && Mouse::getPosition().y < heightT)
+				{
+					AWin.InitWindow(1);
 				}
 			}
-			window.clear();
-			for (int i = 0; i < world.gridLength; i++) {
-				for (int j = 0; j < world.gridLength; j++) {
-					window.draw(world.tiles[i][j]->sprite);
-				}
-			}
+*/
 
-			// Para lo del mouse por cada zona seria como
-			// if mousePos = vector2f(100, 100)
-			// printenpantalla.getPos()
 
-			window.display();
-		}
-	}
-}
+
+
+
+
+
 

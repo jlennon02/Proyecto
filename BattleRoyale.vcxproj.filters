@@ -27,10 +27,22 @@
     <ClCompile Include="Builder.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Archivos de recursos</Filter>
+    </ClCompile>
     <ClCompile Include="GameWorld.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="GameTile.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Frames.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Buttom.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="FillFrame.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,9 +62,6 @@
     <ClInclude Include="GameTile.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Frames.h">
-=======
     <ClInclude Include="Class\Bebida.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
@@ -93,7 +102,15 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Class\Atributos.h">
->>>>>>> parent of e0e5332 (Solo Archivos dll)
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Frames.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Buttom.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="FillFrame.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
