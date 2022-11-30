@@ -136,29 +136,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Builder.cpp" />
+    <ClCompile Include="Frames.cpp" />
     <ClCompile Include="GameTile.cpp" />
     <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="OptionsMenu.cpp" />
-    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Builder.h" />
-    <ClInclude Include="Class\Animal.h" />
-    <ClInclude Include="Class\Archer.h" />
-    <ClInclude Include="Class\Atributos.h" />
-    <ClInclude Include="Class\Bebida.h" />
-    <ClInclude Include="Class\Comida.h" />
-    <ClInclude Include="Class\Consumibles.h" />
-    <ClInclude Include="Class\Entidad.h" />
-    <ClInclude Include="Class\Guerrero.h" />
-    <ClInclude Include="Class\Mage.h" />
-    <ClInclude Include="Class\Mapa.h" />
-    <ClInclude Include="Class\Medicina.h" />
-    <ClInclude Include="Class\Personaje.h" />
-    <ClInclude Include="Class\Punto.h" />
-    <ClInclude Include="Class\Salud.h" />
+    <ClInclude Include="Frames.h" />
     <ClInclude Include="GameTile.h" />
     <ClInclude Include="GameWorld.h" />
     <ClInclude Include="MainMenu.h" />
