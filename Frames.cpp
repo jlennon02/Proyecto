@@ -10,7 +10,7 @@ Frames::Frames(string file, float posX, float posY, float resize, float w, float
 	heightF = h;
 }
 
-Frames::Frames(Color color, float posX, float posY, float w, float h)
+Frames::Frames(Color color, float w, float h, float posX, float posY)
 {
 	this->color = color;
 	this->posX = posX;
@@ -18,8 +18,6 @@ Frames::Frames(Color color, float posX, float posY, float w, float h)
 	scale = 1;
 	widthF = w;
 	heightF = h;
-
-
 }
 
 void Frames::draw(sf::RenderTarget& target, sf::RenderStates states) const
@@ -57,26 +55,44 @@ float Frames::getHeightF() const
 	return heightF;
 }
 
-void Frames::CreateFrame() {
+void Frames::setPosX(float x)
+{
+	posX = x;
+}
+
+float Frames::getPosX() const
+{
+	return posX;
+}
+
+void Frames::setPosY(float y)
+{
+	posY = y;
+}
+
+float Frames::getPosY() const
+{
+	return posY;
+}
+
+
+void Frames::CreateFrameBackgroundFile() {
+	texture.loadFromFile(file);
+	
+	if (widthF == 0 || heightF == 0) 
+	{
+		widthF = texture.getSize().x/scale;
+		heightF = texture.getSize().y/scale;
+	}
+
+	rectangleShape.setSize(Vector2f(widthF, heightF));
+	rectangleShape.setTexture(&texture);
+	rectangleShape.setPosition(posX, posY);
+}
+
+void Frames::CreateFrameBackgroundColor()
+{
 	rectangleShape.setSize(Vector2f(widthF, heightF));
 	rectangleShape.setFillColor(color);
-	rectangleShape.setPosition(posX, posY);
-}
-
-void Frames::CreateFrameBackground() {
-	texture.loadFromFile(file);
-	widthF = texture.getSize().x;
-	heightF = texture.getSize().y;
-
-	rectangleShape.setSize(Vector2f(widthF, heightF));
-	rectangleShape.setTexture(&texture);
-	rectangleShape.setPosition(posX, posY);
-}
-
-void Frames::CreateFrameBackgroundSize()
-{
-	texture.loadFromFile(file);
-	rectangleShape.setSize(Vector2f(widthF, heightF));
-	rectangleShape.setTexture(&texture);
 	rectangleShape.setPosition(posX, posY);
 }

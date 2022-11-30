@@ -8,10 +8,10 @@ class Frames : public Drawable
 {
 public:
 	Frames(string file, float posX = 0, float posY = 0, float resize = 1, float w = 0, float h = 0);
-	Frames(Color color, float posX = 0, float posY = 0, float w = 0, float h = 0);
+	Frames(Color color, float w , float h, float posX = 0, float posY = 0);
 
 	//void update(RenderWindow&);
-	void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+	virtual void draw(RenderTarget& target, RenderStates states) const override;
 
 	void setFile(string file);
 	string getFile() const;
@@ -19,20 +19,26 @@ public:
 	float getWidthF() const;
 	void setHeightF(float h);
 	float getHeightF() const;
+	void setPosX(float x);
+	float getPosX() const;
+	void setPosY(float y);
+	float getPosY() const;
 
-	void CreateFrame();
-	void CreateFrameBackground();
-	void CreateFrameBackgroundSize();
+	void CreateFrameBackgroundFile();
+	void CreateFrameBackgroundColor();
 
-private:
+	friend class Button;
+
+protected:
 	string file;
 	float widthF, heightF;
 	float posX, posY;
 	float scale;
-
+	
 	Color color;
 	Texture texture;
 	RectangleShape rectangleShape;
+	Font font;
 
 };
 
