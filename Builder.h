@@ -49,4 +49,5 @@ class Builder
 
 		Texture texture;
 		RectangleShape rectangleShape;
+		
 };

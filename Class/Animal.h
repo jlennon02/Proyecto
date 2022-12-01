@@ -7,16 +7,24 @@
 
 class Animal : public Entidad {
     public:
-        Animal(){};
-        // la clase animal hereda todo de la clase endidad por lo que aqui solo hace falta poner metodos y herencias
-    
-        void mostrar_sprite() {
-            // codigo de impresion de sprite 
+        Animal(std::string _idAnimal, std::string _nombre, Salud _salud, Atributos _atributos) :
+            Entidad(_nombre, _salud, _atributos) 
+        {
+            idAnimal = _idAnimal; //Recomendado de la fomra idA_XXXX
+        }
+        
+        void setIdAnimal(std::string _idAnimal) 
+        {   
+            idAnimal = _idAnimal;
         }
 
+        std::string getIdAnimal() const 
+        {
+            return idAnimal;
+        }
 
     private:
-        sf::Texture texture;
+        std::string idAnimal;
 
 };
 #endif

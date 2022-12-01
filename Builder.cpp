@@ -83,7 +83,7 @@ void Builder::IWPlay()
 	buttom1.CreateTextButtom(30, "Personaje");
 
 	Buttom buttom2(Color::White, 200, 100, widthT - 250, 150);
-	buttom2.CreateTextButtom(30, to_string(contador));
+	buttom2.CreateTextButtom(30,"DIA:\n " + to_string(contador));
 
 	while (window.isOpen())
 	{
@@ -145,7 +145,7 @@ void Builder::IWInforme()
 	buttom1.CreateTextButtom(70, "Último Superviviente");
 
 	Buttom buttom2(Color::White, 200, 100, widthT - 250, 150);
-	buttom2.CreateTextButtom(30, to_string(contador));
+	buttom2.CreateTextButtom(30,"DIA:\n " + to_string(contador));
 
 	while (window.isOpen())
 	{
@@ -166,32 +166,40 @@ void Builder::IWInforme()
 			}
 			if (event.type == Event::MouseButtonPressed)
 			{
-				if (Mouse::getPosition(window).x > buttom.getPosX() &&
-					Mouse::getPosition(window).y > buttom.getPosY() &&
-					Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
-					Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
-				{
-					contador++;
-					texture.loadFromFile("Texture/Game2.jpg");
-					IWPlay();
+				if (contador <= 5){
+					if (Mouse::getPosition(window).x > buttom.getPosX() &&
+						Mouse::getPosition(window).y > buttom.getPosY() &&
+						Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
+						Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
+					{
+						contador++;
+						texture.loadFromFile("Texture/Game2.jpg");
+						IWPlay();
 
+					}
 				}
-				if (Mouse::getPosition(window).x > buttom1.getPosX() &&
-					Mouse::getPosition(window).y > buttom1.getPosY() &&
-					Mouse::getPosition(window).x < buttom1.getPosX() + buttom1.getWidthF() &&
-					Mouse::getPosition(window).y < buttom1.getPosY() + buttom1.getHeightF())
+				else 
 				{
-					IWWinner();
+					if (Mouse::getPosition(window).x > buttom1.getPosX() &&
+						Mouse::getPosition(window).y > buttom1.getPosY() &&
+						Mouse::getPosition(window).x < buttom1.getPosX() + buttom1.getWidthF() &&
+						Mouse::getPosition(window).y < buttom1.getPosY() + buttom1.getHeightF())
+					{
+						IWWinner();
+					}
 				}
+				
 			}
 
 		}
 
 		window.clear();
 		window.draw(rectangleShape);
-		window.draw(buttom);
+		
 		if (contador > 5)
 			window.draw(buttom1);
+		else
+			window.draw(buttom);
 		window.draw(buttom2);
 		window.display();
 	}

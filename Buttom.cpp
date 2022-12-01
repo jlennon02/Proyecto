@@ -6,6 +6,7 @@ Buttom::Buttom(string file, float posX, float posY, float resize, float w, float
 	this->fontDirection = fontDirection;
 	font.loadFromFile(fontDirection);
 	CreateFrameBackgroundFile();
+	
 }
 
 Buttom::Buttom(Color color, float w, float h, float posX, float posY, string fontDirection)
@@ -15,6 +16,15 @@ Buttom::Buttom(Color color, float w, float h, float posX, float posY, string fon
 	font.loadFromFile(fontDirection);
 	CreateFrameBackgroundColor();
 }
+
+/*void Buttom::setButtomFile(string file, float posX, float posY, float resize, float w, float h, string font)
+{
+	Frames(file, posX, posY, resize, w, h);
+	
+	this->fontDirection = fontDirection;
+	Frames::font.loadFromFile(fontDirection);
+	CreateFrameBackgroundFile();
+}*/
 
 void Buttom::CreateTextButtom(int TextSize, string textButtom, Color colorFont)
 {
@@ -30,7 +40,8 @@ void Buttom::CreateTextButtom(int TextSize, string textButtom, Color colorFont)
 	//text.setOrigin(text.getGlobalBounds().width/2 + TextSize/10 - text.getOutlineThickness(), text.getGlobalBounds().height - heightF / (10 + TextSize / 10));
 	text.setOrigin(text.getGlobalBounds().width / 2 + TextSize / 10 - text.getOutlineThickness(), text.getGlobalBounds().height / 2 + TextSize / 10);
 	text.setPosition(posX + widthF/2, posY + heightF/2);
-}	
+	
+}
 
 void Buttom::draw(RenderTarget& target, RenderStates states) const
 {

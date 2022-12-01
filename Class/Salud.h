@@ -4,30 +4,36 @@
 
 class Salud {
     public:
-        Salud(int _hp, int _hambre, int _sed, int _estamina) 
+        Salud(int _hp = 100, int _hambre = 100, int _sed = 100, int _estamina = 100)
         {
             hp = _hp;
             hambre = _hambre;
             sed = _sed;
             estamina = _estamina;
         }
+        friend class Entidad;
+    private:
+        int hp, hambre, sed, estamina;
+};
+#endif
 
-        void setHp(int _hp) 
+/*
+        void setHp(int _hp)
         {
            hp = _hp;
         }
 
-        int getHp() const 
+        int getHp() const
         {
             return hp;
         }
 
-        void setHambre(int _hambre) 
+        void setHambre(int _hambre)
         {
-            hambre = _hambre;    
+            hambre = _hambre;
         }
 
-        int getHambre() const 
+        int getHambre() const
         {
             return hambre;
         }
@@ -37,7 +43,7 @@ class Salud {
             sed = _sed;
         }
 
-        int getSed() const 
+        int getSed() const
         {
             return sed;
         }
@@ -47,12 +53,8 @@ class Salud {
             estamina = _estamina;
         }
 
-        int getEstamina() const 
+        int getEstamina() const
         {
             return estamina;
         }
-
-    private:
-        int hp{100}, hambre{100}, sed{100}, estamina{100};
-};
-#endif
+*/
