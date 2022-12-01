@@ -72,6 +72,7 @@ void Builder::CreateWindow()
 	rectangleShape.setTexture(&texture);
 }
 
+
 void Builder::InitWindow(int des)
 {
 	window.create(VideoMode(widthT, heightT), nameWindow, style);
@@ -135,6 +136,122 @@ void Builder::InitWindow(int des)
 		window.draw(rectangleShape);
 		window.draw(a);
 		window.draw(b);
+		window.display();
+	}
+}
+
+void Builder::IWPlay()
+{
+	window.create(VideoMode(widthT, heightT), nameWindow, style);
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+
+		}
+		window.clear();
+		window.draw(rectangleShape);
+		window.display();
+	}
+}
+
+void Builder::IWOptions()
+{
+	window.create(VideoMode(widthT, heightT), nameWindow, style);
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+
+		}
+		window.clear();
+		window.draw(rectangleShape);
+		window.display();
+	}
+}
+
+void Builder::IWAbout()
+{
+	window.create(VideoMode(widthT, heightT), nameWindow, style);
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+
+		}
+		window.clear();
+		window.draw(rectangleShape);
+		window.display();
+	}
+}
+
+void Builder::IWMapa()
+{
+	window.create(VideoMode(widthT, heightT), nameWindow, style);
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+
+		}
+		window.clear();
+		window.draw(rectangleShape);
 		window.display();
 	}
 }

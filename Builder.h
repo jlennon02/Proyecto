@@ -27,7 +27,11 @@ class Builder
 		void CreateWindow();
 		void CreateWindowBackground();
 		//void InitWindow(RenderWindow& BeforeWindow);
-		void InitWindow(int des = 0);
+		void InitWindow(int des = 0); // Deshuso
+		void IWPlay();
+		void IWOptions();
+		void IWAbout();
+		void IWMapa();
 
 		RenderWindow window;
 	private:

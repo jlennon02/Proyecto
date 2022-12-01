@@ -51,13 +51,13 @@ int main() {
 					int x = mainMenu.MainMenuPressed();
 					if (x == 0) {
 						MENU.setVisible(false);
-						bPlay.InitWindow();
+						bPlay.IWPlay();
 					}
 					if (x == 1)
-						bOptions.InitWindow();
+						bOptions.IWOptions();
 
 					if (x == 2)
-						bAbout.InitWindow();
+						bAbout.IWAbout();
 
 					if (x == 3) {
 						RenderWindow MAPA(VideoMode(800, 800), "Map", sf::Style::Titlebar | sf::Style::Close);
