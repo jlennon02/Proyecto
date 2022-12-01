@@ -73,76 +73,15 @@ void Builder::CreateWindow()
 }
 
 
-void Builder::InitWindow(int des)
-{
-	window.create(VideoMode(widthT, heightT), nameWindow, style);
-	
-	// Buttoms and Windows Redirect
-	Buttom a(Color::Blue, 100, 50, widthT - 150, 100);
-	a.CreateTextButtom();
-	
-	Buttom b(Color::Red, 100,50, widthT -150, heightT - 100);
-	b.CreateTextButtom();
-	
-	Builder newWindow("Texture/Game3.jpg", "Éxito");
-	newWindow.CreateWindowBackground();
-
-	Builder AWin("Texture/Game0.jpg", "Soy el");
-	AWin.CreateWindowBackground();
-	
-	int desicion = des;
-
-	while (window.isOpen())
-	{
-		window.setMouseCursorVisible(true);
-		Event event;
-		while (window.pollEvent(event)) 
-		{
-			if (event.type == Event::Closed)
-			{
-				window.close();
-			}
-			if (event.type == Event::KeyPressed)
-			{
-				if (event.key.code == Keyboard::Escape)
-				{
-					window.close();
-				}
-			}
-			
-			if (event.type == Event::MouseButtonPressed)
-			{
-				if (event.type == Event::MouseButtonPressed)
-				{
-					if (Mouse::getPosition(window).x > a.getPosX() && Mouse::getPosition(window).y > a.getPosY() &&
-						Mouse::getPosition(window).x < a.getPosX() + a.getWidthF() && 
-						Mouse::getPosition(window).y < a.getPosY() + a.getHeightF())
-					{
-						newWindow.InitWindow(2);
-					}
-
-					if (Mouse::getPosition(window).x > b.getPosX() && Mouse::getPosition(window).y > b.getPosY() &&
-						Mouse::getPosition(window).x < b.getPosX() + b.getWidthF() &&
-						Mouse::getPosition(window).y < b.getPosY() + b.getHeightF())
-					{
-						AWin.InitWindow(1);
-					}
-				}
-
-			}
-			
-		}
-		window.clear();
-		window.draw(rectangleShape);
-		window.draw(a);
-		window.draw(b);
-		window.display();
-	}
-}
-
 void Builder::IWPlay()
 {
 	window.create(VideoMode(widthT, heightT), nameWindow, style);
+	Buttom buttom(Color::Red, 200, 100, widthT - 250, heightT - 150);
+	buttom.CreateTextButtom();
+
+	Buttom buttom1(Color::Blue, 200, 100, widthT - 250, heightT - 350);
+	buttom1.CreateTextButtom();
+
 
 	while (window.isOpen())
 	{
@@ -150,6 +89,7 @@ void Builder::IWPlay()
 		Event event;
 		while (window.pollEvent(event))
 		{
+			window.setActive();
 			if (event.type == Event::Closed)
 			{
 				window.close();
@@ -161,10 +101,33 @@ void Builder::IWPlay()
 					window.close();
 				}
 			}
+			if (event.type == Event::MouseButtonPressed)
+			{
+				if (Mouse::getPosition(window).x > buttom.getPosX() && 
+					Mouse::getPosition(window).y > buttom.getPosY() &&
+					Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
+					Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
+				{
+					texture.loadFromFile("Texture/Game0.jpg");
+					IWInforme();
+				}
 
+				if (Mouse::getPosition(window).x > buttom1.getPosX() &&
+					Mouse::getPosition(window).y > buttom1.getPosY() &&
+					Mouse::getPosition(window).x < buttom1.getPosX() + buttom1.getWidthF() &&
+					Mouse::getPosition(window).y < buttom1.getPosY() + buttom1.getHeightF())
+				{
+					texture.loadFromFile("Texture/Game3.jpg");
+					IWPersonaje();
+				}
+			}
+			
 		}
+
 		window.clear();
 		window.draw(rectangleShape);
+		window.draw(buttom);
+		window.draw(buttom1);
 		window.display();
 	}
 }
@@ -255,6 +218,152 @@ void Builder::IWMapa()
 		window.display();
 	}
 }
+
+void Builder::IWInforme()
+{
+	window.create(VideoMode(widthT, heightT), "Informe", style);
+	Buttom buttom(Color::Green, 200, 100, widthT - 250, heightT - 150);
+	buttom.CreateTextButtom();
+	
+	Buttom buttom1(Color::Green, 200, 100, widthT - 250, heightT - 250);
+	buttom1.CreateTextButtom();
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+			if (event.type == Event::MouseButtonPressed)
+			{
+				if (Mouse::getPosition(window).x > buttom.getPosX() &&
+					Mouse::getPosition(window).y > buttom.getPosY() &&
+					Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
+					Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
+				{
+					texture.loadFromFile("Texture/Game2.jpg");
+					IWPlay();
+				}
+			}
+
+		}
+
+		window.clear();
+		window.draw(rectangleShape);
+		window.draw(buttom);
+		window.display();
+	}
+}
+
+void Builder::IWPersonaje()
+{
+	window.create(VideoMode(widthT, heightT), "Personaje", style);
+	Buttom buttom(Color::Yellow, 200, 100, widthT - 250, heightT - 150);
+	buttom.CreateTextButtom();
+
+	Buttom buttom1(Color::Green, 200, 100, widthT - 250, heightT - 350);
+	buttom1.CreateTextButtom();
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+			if (event.type == Event::MouseButtonPressed)
+			{
+				if (Mouse::getPosition(window).x > buttom.getPosX() &&
+					Mouse::getPosition(window).y > buttom.getPosY() &&
+					Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
+					Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
+				{
+					IWPlay();
+				}
+
+				if (Mouse::getPosition(window).x > buttom1.getPosX() &&
+					Mouse::getPosition(window).y > buttom1.getPosY() &&
+					Mouse::getPosition(window).x < buttom1.getPosX() + buttom1.getWidthF() &&
+					Mouse::getPosition(window).y < buttom1.getPosY() + buttom1.getHeightF())
+				{
+					texture.loadFromFile("Texture/Game1.jpg");
+					IWOthers();
+				}
+			}
+
+		}
+
+		window.clear();
+		window.draw(rectangleShape);
+		window.draw(buttom);
+		window.draw(buttom1);
+		window.display();
+	}
+}
+
+void Builder::IWOthers()
+{
+	window.create(VideoMode(widthT, heightT), "Others", style);
+	Buttom buttom(Color::Red, 200, 100, widthT - 250, heightT - 150);
+	buttom.CreateTextButtom();
+
+	while (window.isOpen())
+	{
+		window.setMouseCursorVisible(true);
+		Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::Closed)
+			{
+				window.close();
+			}
+			if (event.type == Event::KeyPressed)
+			{
+				if (event.key.code == Keyboard::Escape)
+				{
+					window.close();
+				}
+			}
+			if (event.type == Event::MouseButtonPressed)
+			{
+				if (Mouse::getPosition(window).x > buttom.getPosX() &&
+					Mouse::getPosition(window).y > buttom.getPosY() &&
+					Mouse::getPosition(window).x < buttom.getPosX() + buttom.getWidthF() &&
+					Mouse::getPosition(window).y < buttom.getPosY() + buttom.getHeightF())
+				{
+					IWPersonaje();
+				}
+			}
+
+		}
+		window.clear();
+		window.draw(rectangleShape);
+		window.draw(buttom);
+		window.display();
+	}
+}
+
 
 /*
 
