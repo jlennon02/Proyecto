@@ -76,15 +76,19 @@ void Builder::InitWindow(int des)
 {
 	window.create(VideoMode(widthT, heightT), nameWindow, style);
 	
-	Buttom b(Color::Red, 100,50, 400, 200);
+	// Buttoms and Windows Redirect
+	Buttom a(Color::Blue, 100, 50, widthT - 150, 100);
+	a.CreateTextButtom();
+	
+	Buttom b(Color::Red, 100,50, widthT -150, heightT - 100);
 	b.CreateTextButtom();
 	
-	Frames frame(Color::Blue, 200, 80);
-	Builder newWindow("Texture/Game3.jpg", "Exito");
+	Builder newWindow("Texture/Game3.jpg", "Éxito");
 	newWindow.CreateWindowBackground();
 
-	Builder AWin("Texture/Game0.jpg", "Exito");
+	Builder AWin("Texture/Game0.jpg", "Soy el");
 	AWin.CreateWindowBackground();
+	
 	int desicion = des;
 
 	while (window.isOpen())
@@ -104,20 +108,21 @@ void Builder::InitWindow(int des)
 					window.close();
 				}
 			}
-			if (Mouse::getPosition().x > widthT || Mouse::getPosition().y > heightT)
-				window.setMouseCursorVisible(false);
-
 			
 			if (event.type == Event::MouseButtonPressed)
 			{
 				if (event.type == Event::MouseButtonPressed)
 				{
-					if (Mouse::getPosition().x > 0 && Mouse::getPosition().x < 500 && Mouse::getPosition().y > 0 && Mouse::getPosition().y < 500)
+					if (Mouse::getPosition(window).x > a.getPosX() && Mouse::getPosition(window).y > a.getPosY() &&
+						Mouse::getPosition(window).x < a.getPosX() + a.getWidthF() && 
+						Mouse::getPosition(window).y < a.getPosY() + a.getHeightF())
 					{
 						newWindow.InitWindow(2);
 					}
 
-					if (Mouse::getPosition().x > widthT - 500 && Mouse::getPosition().x < widthT && Mouse::getPosition().y > heightT - 500 && Mouse::getPosition().y < heightT)
+					if (Mouse::getPosition(window).x > b.getPosX() && Mouse::getPosition(window).y > b.getPosY() &&
+						Mouse::getPosition(window).x < b.getPosX() + b.getWidthF() &&
+						Mouse::getPosition(window).y < b.getPosY() + b.getHeightF())
 					{
 						AWin.InitWindow(1);
 					}
@@ -126,32 +131,16 @@ void Builder::InitWindow(int des)
 			}
 			
 		}
-		
 		window.clear();
 		window.draw(rectangleShape);
+		window.draw(a);
 		window.draw(b);
-		window.draw(frame);
 		window.display();
 	}
 }
 
 /*
-if (Mouse::getPosition().x > widthT || Mouse::getPosition().y > heightT)
-				window.setMouseCursorVisible(false);
 
-
-			if (event.type == Event::MouseButtonPressed)
-			{
-				if (Mouse::getPosition().x > 0 && Mouse::getPosition().x < 500 && Mouse::getPosition().y > 0 && Mouse::getPosition().y < 500)
-				{
-					newWindow.InitWindow(2);
-				}
-
-				if (Mouse::getPosition().x > widthT - 500 && Mouse::getPosition().x < widthT && Mouse::getPosition().y > heightT - 500 && Mouse::getPosition().y < heightT)
-				{
-					AWin.InitWindow(1);
-				}
-			}
 */
 
 
