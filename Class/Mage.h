@@ -23,7 +23,6 @@ class Mage: public Personaje{
     void gethitbox(int _vel_ataq){
        vel_ataq = vel_ataq;
     }
-    int
   
   private:
     int daño;
