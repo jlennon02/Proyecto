@@ -26,15 +26,16 @@ class Builder
 
 		void CreateWindow();
 		void CreateWindowBackground();
-		void IWPlay();
-		void IWOptions();
-		void IWAbout();
-		void IWMapa();
 		
+		void IWPlay();
 		void IWInforme();
 		void IWPersonaje();
 		void IWOthers();
+		void IWWinner();
 
+		void IWOptions();
+		void IWAbout();
+		void IWMapa();
 
 		RenderWindow window;
 	private:
@@ -44,6 +45,7 @@ class Builder
 		float widthT = 0, heightT = 0;
 		float scale;
 		Uint32 style;
+		int contador = 0;
 
 		Texture texture;
 		RectangleShape rectangleShape;
