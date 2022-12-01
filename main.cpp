@@ -1,7 +1,9 @@
+
 #include <SFML/Graphics.hpp>
 #include "Builder.h"
 #include "MainMenu.h"
 #include "Buttom.h"
+#include "GameWorld.h"
 using namespace sf;
 
 int main() {
@@ -25,6 +27,7 @@ int main() {
 		Event event;
 		while (MENU.pollEvent(event)) {
 			if (event.type == Event::Closed)
+
 				MENU.close();
 
 			if (event.type == Event::Closed)
@@ -42,10 +45,11 @@ int main() {
 					mainMenu.MoveDown();
 					break;
 				}
-				if (event.key.code == Keyboard::Return) {
+				if (event.key.code == Keyboard::Enter) {
+					
 
 					int x = mainMenu.MainMenuPressed();
-					if (x == 0){
+					if (x == 0) {
 						MENU.setVisible(false);
 						bPlay.InitWindow();
 					}
@@ -55,7 +59,35 @@ int main() {
 					if (x == 2)
 						bAbout.InitWindow();
 
-					if (x == 3)
+					if (x == 3) {
+						RenderWindow MAPA(VideoMode(800, 800), "Map", sf::Style::Titlebar | sf::Style::Close);
+						GameWorld gameWorld = GameWorld();
+						while (MAPA.isOpen())
+						{
+							Event aevent;
+							while (MAPA.pollEvent(aevent)) {
+								if (aevent.type == Event::Closed)
+								{
+									MAPA.close();
+								}
+								if (aevent.type == Event::KeyPressed)
+								{
+									if (aevent.key.code == Keyboard::Escape)
+									{
+										MAPA.close();
+									}
+								}
+							}
+							MAPA.clear();
+							for (int i = 0; i < gameWorld.gridLength; i++) {
+								for (int j = 0; j < gameWorld.gridLength; j++) {
+									MAPA.draw(gameWorld.tiles[i][j]->sprite);
+								}
+							}
+							MAPA.display();
+						}
+					}
+					if (x == 4)
 						MENU.close();
 					break;
 				}
